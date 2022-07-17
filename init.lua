@@ -1,3 +1,8 @@
+-- When starting neovim, this script gets excecuted to load all the plugins
+-- and apply all options. Use `g-d` to go to the definition for each of these
+-- to jump to the files
+
+require "user.impatient"
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
@@ -14,7 +19,6 @@ require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
 require "user.project"
-require "user.impatient"
 require "user.illuminate"
 require "user.indentline"
 require "user.alpha"

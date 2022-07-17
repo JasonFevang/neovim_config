@@ -1,3 +1,6 @@
+-- Create commands or options that only run when certain patterns
+-- are met
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
@@ -20,15 +23,17 @@ vim.api.nvim_create_autocmd({ "User" }, {
   end,
 })
 
+-- Absolutely not
 -- Set wrap and spell in markdown and gitcommit
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "gitcommit", "markdown" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "gitcommit", "markdown" },
+--   callback = function()
+--     vim.opt_local.wrap = true
+--     vim.opt_local.spell = true
+--   end,
+-- })
 
+-- I don't know what this does
 vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 
 -- Fixes Autocomment
@@ -39,6 +44,8 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 })
 
 -- Highlight Yanked Text
+-- When you yank a text object not selected with visual mode(yiw or yap),
+-- it highlights it for 200ms. I love that
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     vim.highlight.on_yank { higroup = "Visual", timeout = 200 }

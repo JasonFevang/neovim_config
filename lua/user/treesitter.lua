@@ -1,3 +1,7 @@
+-- Real time abstract-syntax tree parsing of files.
+-- Very useful for syntax hightlighting, as well as enabling
+-- lots of other plugins to do really cool, "smart" stuff
+
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
 	return
@@ -8,7 +12,7 @@ configs.setup({
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
+		disable = { "" }, -- list of language that will be disabled
 	},
 	autopairs = {
 		enable = true,

@@ -1,3 +1,5 @@
+-- Draws indent lines
+-- I'm not totally sure exactly what this does
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
   return

@@ -1,3 +1,5 @@
+-- Snazzy status line at the bottom
+
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
@@ -7,6 +9,8 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
+-- Where does diagnostic information come from?
+-- What is nvim_diagnostic?
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
@@ -16,6 +20,7 @@ local diagnostics = {
   always_visible = true,
 }
 
+-- The lack of icons makes this look all squished
 local diff = {
   "diff",
   colored = false,
@@ -23,6 +28,8 @@ local diff = {
   cond = hide_in_width,
 }
 
+-- Not really needed cause the filename is at the top with
+-- the file extension?
 local filetype = {
   "filetype",
   icons_enabled = false,
@@ -33,6 +40,7 @@ local location = {
   padding = 0,
 }
 
+-- This seems kinda useless lmao
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end

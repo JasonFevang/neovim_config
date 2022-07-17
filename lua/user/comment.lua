@@ -1,3 +1,7 @@
+-- Allows single command to add comments to all sorts of filetypes.
+-- Requires treesitter to know what constitutes a comment for each
+-- type of file. Keymap set in `./keymaps.lua`
+
 local status_ok, comment = pcall(require, "Comment")
 if not status_ok then
   return

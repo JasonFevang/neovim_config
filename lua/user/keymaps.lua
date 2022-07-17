@@ -39,11 +39,12 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
-keymap("v", "p", '"_dP', opts)
+--keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- Don't need this with Capslock mapped to escape
+--keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

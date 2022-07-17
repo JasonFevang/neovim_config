@@ -1,3 +1,19 @@
+# My additions to LunarVim's neovim IDE
+I will contain all my instructions/descriptions of keymaps, plugins and functionality as I learn them in this repository. I will document all my modifications to this starting base. 
+
+## Packer: Plugin Manager
+Packer manages cloned git repositories of each plugin in `~/.local/share/nvim/site/pack/packer/`. `start/` contains the plugins that get loaded every time you start nvim. `opt/` is for plugins that get lazy-loaded after some sort of action occurs. This behaviour is user-configured in the `./lua/user/*` config scripts.
+
+`./plugin/packer_compiled.lua` is a file used internally by the plugin manager packer. If things aren't working properly, try removing it. It should be ignored in source control. It makes things faster for packer
+
+## Tasks
+* Figure out why `:Telescope live_grep` doesn't work
+* Stop error when entering a Markdown file
+* Remove spellcheck from markdown files
+* `.` when involving pasting over visual selections is messed up. Why?
+* Setup a nerdfont with icons so all the set icons function properly
+* Maybe setup allacrity instead of my current terminal emulator to match nvims operation?
+
 # A Basic Stable IDE config for Neovim
 
 > Why does this repo exist?

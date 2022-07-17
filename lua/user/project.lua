@@ -1,3 +1,6 @@
+-- Project management tool
+-- I'll need to practice using this to see if I like it or not
+
 local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
 	return

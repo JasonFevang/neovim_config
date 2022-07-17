@@ -1,3 +1,6 @@
+-- Debugger setup
+-- When I have a debugging task, I'll need to set this up then
+
 local dap_status_ok, dap = pcall(require, "dap")
 if not dap_status_ok then
   return

@@ -1,3 +1,9 @@
+-- Completion engine
+-- Specify a number of completion sources, and a precedent for
+-- the sources, and they appear as a drop down below your typing
+-- Snippets is one source. The buffer source is words that have
+-- already been typed in the current buffer.
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
 	return
@@ -97,12 +103,12 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
-				nvim_lsp = "",
-				nvim_lua = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
-				emoji = "",
+				nvim_lsp = "LSP",
+				nvim_lua = "Lua",
+				luasnip = "Snippet",
+				buffer = "Buffer",
+				path = "Path",
+				emoji = "Emoji",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -123,6 +129,7 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
-		ghost_text = true,
+        -- Slightly opaque characters follow the current word you're typing. I find it distracting
+		ghost_text = false,
 	},
 })

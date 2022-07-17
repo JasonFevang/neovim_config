@@ -1,3 +1,9 @@
+-- A file explorer. Very handy
+-- None of the icons will work until I get an icon font, dang
+-- Use 'h' and 'l' to open and close directories
+-- Use <C-h> and <C-l> to leave the split without closing
+-- Enter to open an file
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return

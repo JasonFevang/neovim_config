@@ -1,3 +1,7 @@
+-- Telescope is a fuzzy finder for lists.
+-- You can search through files, git branches, words in files, everything
+-- Keymaps for telescope are in ./keymaps.lua
+
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   return

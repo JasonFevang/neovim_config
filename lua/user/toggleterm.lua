@@ -1,3 +1,7 @@
+-- Open a terminal window instead neovim
+-- Actually pretty handy
+-- Use [[<c-\>]] to toggle the terminal
+
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	return
@@ -20,6 +24,8 @@ toggleterm.setup({
 	},
 })
 
+-- I don't know what these keymaps do :/
+-- 't' is terminal mode
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
   -- vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
