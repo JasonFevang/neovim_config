@@ -14,13 +14,23 @@ dashboard.section.header.val = {
   [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
   [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
+
+-- The edit config action is different depending on the system
+-- On my work windows machine the directory is different
+local edit_config_action = ""
+if vim.fn.has("win32") == 1 then
+    edit_config_action = ":e C:/Users/Jason/AppData/local/nvim/init.lua <CR>"
+else
+    edit_config_action = ":e ~/.config/nvim/init.lua <CR>"
+end
+
 dashboard.section.buttons.val = {
   dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
   dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
   dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
   dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
   dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
-  dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
+  dashboard.button("c", " " .. " Config", edit_config_action),
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
 local function footer()

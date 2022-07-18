@@ -52,3 +52,14 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,]")
 -- I don't like this, "-" should separate words
 --vim.opt.iskeyword:append("-")
+
+-- Set the shell to use powershell if running on windows
+-- see `:help shell-powershell for more info`
+if vim.fn.has("win32") == 1 then
+    vim.opt.shell = 'powershell'
+    vim.opt.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+    vim.opt.shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait'
+    vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+    vim.opt.shellquote= ""
+    vim.opt.shellxquote= ""
+end
