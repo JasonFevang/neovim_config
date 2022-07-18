@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 local servers = {
+  "clangd",
   "sumneko_lua",
-  "cssls",
   "html",
   "tsserver",
   "pyright",

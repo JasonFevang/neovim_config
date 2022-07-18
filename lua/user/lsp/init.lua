@@ -4,6 +4,9 @@
 -- easily installing LSP servers from a maintained list.
 -- This allows for syntax errors on the fly
 
+-- The list of supported commands and their keybindings are in `./handlers.lua`
+-- for example, <g-d> is go to definition
+
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
   return

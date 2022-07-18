@@ -33,6 +33,14 @@ vim.api.nvim_create_autocmd({ "User" }, {
 --   end,
 -- })
 
+-- Make tabs go by two for these files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "javascript", "typescript" , "css" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+  end,
+})
+
 -- I don't know what this does
 --vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 

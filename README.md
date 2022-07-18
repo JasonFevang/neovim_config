@@ -20,6 +20,16 @@ Packer manages cloned git repositories of each plugin in `~/.local/share/nvim/si
 * Install vim-surround DONE
 * Make <S-j> and <S-k> move the block up and down by one, that was dope
 
+# LSP Configuration with
+
+
+# END OF MY NOTES
+---
+---
+---
+---
+---
+
 # A Basic Stable IDE config for Neovim
 
 > Why does this repo exist?
