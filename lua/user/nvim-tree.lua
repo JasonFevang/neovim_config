@@ -21,6 +21,10 @@ nvim_tree.setup {
     enable = true,
     update_cwd = true,
   },
+  git = {
+    -- Don't ignore files in .gitignore, still show them
+    ignore = false,
+  },
   renderer = {
     root_folder_modifier = ":t",
     icons = {
