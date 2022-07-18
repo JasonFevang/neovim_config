@@ -25,3 +25,8 @@ require "user.alpha"
 require "user.surround"
 require "user.lsp"
 require "user.dap"
+
+-- Try to source a file called .nvimlocal.lua
+-- I will put project specific vim options here.
+-- Example: Use tabs for this project, etc
+vim.cmd("silent! source .nvimlocal.lua")
