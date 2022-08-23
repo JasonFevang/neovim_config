@@ -3,6 +3,7 @@
 -- Use 'h' and 'l' to open and close directories
 -- Use <C-h> and <C-l> to leave the split without closing
 -- Enter to open an file
+-- See file explorer keymaps with `:help nvim-tree-mappings`
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
@@ -19,15 +20,26 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
   },
   git = {
     -- Don't ignore files in .gitignore, still show them
     ignore = false,
   },
+  actions = {
+    use_system_clipboard = true,
+    change_dir = {
+      enable = true,
+      global = false,
+      restrict_above_cwd = true,
+    },
+  },
   renderer = {
     root_folder_modifier = ":t",
     icons = {
+      show = {
+        git = false
+      },
       glyphs = {
         default = "",
         symlink = "",

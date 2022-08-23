@@ -25,13 +25,13 @@ vim.api.nvim_create_autocmd({ "User" }, {
 
 -- Absolutely not
 -- Set wrap and spell in markdown and gitcommit
--- vim.api.nvim_create_autocmd({ "FileType" }, {
---   pattern = { "gitcommit", "markdown" },
---   callback = function()
---     vim.opt_local.wrap = true
---     vim.opt_local.spell = true
---   end,
--- })
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "gitcommit", "markdown" },
+  callback = function()
+    vim.opt_local.wrap = true
+    -- vim.opt_local.spell = true
+  end,
+})
 
 -- Make tabs go by two for these files
 vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -41,8 +41,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- I don't know what this does
---vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
+-- Makes it so when you quit nvim, it'll exit even if NvimTree is open
+-- winnr('$') gets the window number of the last window(the window count)
+-- tabpagenr() get the tab number of the current tab
+vim.cmd "autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif"
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
