@@ -1,6 +1,7 @@
--- Vim plugin for automatically highlighting other uses 
+-- Vim plugin for automatically highlighting and jumping to other uses 
 -- of the word under the cursor. Integrates with Neovim's 
--- LSP client for intelligent highlighting.
+-- LSP client and treesitter
+-- Use <a-n> and <a-p> to jump between references
 local status_ok, illuminate = pcall(require, "illuminate")
 if not status_ok then
 	return

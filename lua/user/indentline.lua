@@ -1,5 +1,5 @@
--- Draws indent lines
--- I'm not totally sure exactly what this does
+-- Adds indentation guides to all lines (including empty lines).
+-- :help indent-blankline
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
   return

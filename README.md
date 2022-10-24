@@ -7,17 +7,9 @@ Packer manages cloned git repositories of each plugin in `~/.local/share/nvim/si
 `./plugin/packer_compiled.lua` is a file used internally by the plugin manager packer. If things aren't working properly, try removing it. It should be ignored in source control. It makes things faster for packer
 
 ## Tasks
-* Figure out why `:Telescope live_grep` doesn't work DONE
-    * `ripgrep` dependency wasn't installed. I installed it with pacman
-* Stop error when entering a Markdown file DONE
-    * Fixed by running `:TSUpdate`
-* Remove spellcheck from markdown files DONE
-    * Removed an auto command that enabled it for markdown files from `./lua/user/autocommands.lua`
 * `.` when involving pasting over visual selections is messed up. Why?
     * It's a problem with neovim itself. Happens even if all my configuration is disabled
-* Setup a nerdfont with icons so all the set icons function properly DONE
 * Bash language server fails when opening a bash file
-* Install vim-surround DONE
 * Make <S-j> and <S-k> move the block up and down by one, that was dope
 
 

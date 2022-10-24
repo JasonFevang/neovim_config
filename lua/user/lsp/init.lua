@@ -1,8 +1,8 @@
 -- Language server protocol support for neovim.
--- There is native support for connecting to language servers in neovim
--- The plugin "williamboman/nvim-lsp-installer" is an installer to allow
--- easily installing LSP servers from a maintained list.
--- This allows for syntax errors on the fly
+-- There is native support for connecting to language servers in neovim.
+-- `mason.nvim` is a Neovim plugin that allow you to easily manage external
+-- editor tooling such as LSP servers, DAP servers, linters, and formatters
+-- through a single interface.
 
 -- The list of supported commands and their keybindings are in `./handlers.lua`
 -- for example, <g-d> is go to definition
